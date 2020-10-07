@@ -16,9 +16,7 @@
 <body>
   <!-- Nav bar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
@@ -26,13 +24,13 @@
             <a class="nav-link" href="Home.html">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href=""><span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="">Members<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href=""><span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="">Certifications<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href=""><span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="">Expired Certifications<span class="sr-only">(current)</span></a>
           </li>
         </ul>
 
@@ -49,41 +47,81 @@
 
 
     <!-- Table -->
-    <table  class="sort table table-hover">
-    <thead>
-      <tr>
-        <th >Member</th>
-        <th >MemberID</th>
-        <th >Station</th>
-        <th >Contact</th>
-        <th >Certifications</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </tbody>
-    </table>
+    <div class="container-fluid">
 
+      <table  class="sort table table-hover">
+      <thead>
+        <tr>
+          <th >Member Frist Name</th>
+          <th >Member Last Name</th>
+          <th >MemberID</th>
+          <th >Station</th>
+          <th >Contact</th>
+          <th >Certifications</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+      </table>
+
+</div>
+
+    <div class="container-fluid">
+        <form method="post" v-on:submit.prevent="">
+            <h3>Edit Member Record</h3>
+
+            <div class="form-group">
+            <label for="">Member First Name</label>
+            <input type="text" placeholder="Jane">
+          </div>
+          <div class="form-group">
+            <label for="">Member Last Name</label>
+            <input type="text" placeholder="Doe">
+          </div>
+          <div class="form-group">
+            <label for="">MemberID</label>
+            <input type="number">
+          </div>
+          <div class="form-group">
+            <label for="">Station</label>
+            <input type="text" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="">Contact</label>
+            <input type="text" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="">Certifications</label>
+            <input type="text" placeholder="">
+          </div>
+
+          <button type="submit" class="btn btn-primary">Save</button>
+          </form>
+      </div>
 
 
 
