@@ -36,13 +36,24 @@
 
       </div>
     </nav>
-    <button type="button" name="button">View Expired</button>
-    <button type="button" name="button">View Member List</button>
 
 
-    <h1></h1>
+
+    <h1>View all Certifications</h1>
 
 
+
+  <!-- Select Certification -->
+    <select class="form-control" >
+                  <option value=""></option>
+                  <option value=""></option>
+                  <option value=""></option>
+                </select>
+
+  <!-- Select Certification status-->
+    <label for="select"><input type="radio" name="select">Current</label>
+    <label for="select"><input type="radio" name="select">Expired</label>
+    <label for="select"><input type="radio" name="select">Both</label>
 
 
 
@@ -52,12 +63,10 @@
       <table  class="sort table table-hover">
       <thead>
         <tr>
-          <th >Member Frist Name</th>
-          <th >Member Last Name</th>
-          <th >MemberID</th>
-          <th >Station</th>
-          <th >Contact</th>
-          <th >Certifications</th>
+          <th >Member ID</th>
+          <th >Member Name</th>
+          <th >Expiration Date</th>
+          <th >Status</th>
         </tr>
       </thead>
       <tbody>
@@ -66,20 +75,14 @@
           <td></td>
           <td></td>
           <td></td>
-          <td></td>
-          <td></td>
         </tr>
         <tr>
           <td></td>
           <td></td>
           <td></td>
           <td></td>
-          <td></td>
-          <td></td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
           <td></td>
           <td></td>
           <td></td>
@@ -90,38 +93,10 @@
 
 </div>
 
-    <div class="container-fluid">
-        <form method="post" v-on:submit.prevent="">
-            <h3>Edit Member Record</h3>
 
-            <div class="form-group">
-            <label for="">Member First Name</label>
-            <input type="text" placeholder="Jane">
-          </div>
-          <div class="form-group">
-            <label for="">Member Last Name</label>
-            <input type="text" placeholder="Doe">
-          </div>
-          <div class="form-group">
-            <label for="">MemberID</label>
-            <input type="number">
-          </div>
-          <div class="form-group">
-            <label for="">Station</label>
-            <input type="text" placeholder="">
-          </div>
-          <div class="form-group">
-            <label for="">Contact</label>
-            <input type="text" placeholder="">
-          </div>
-          <div class="form-group">
-            <label for="">Certifications</label>
-            <input type="text" placeholder="">
-          </div>
+    
 
-          <button type="submit" class="btn btn-primary">Save</button>
-          </form>
-      </div>
+
 
 
 
