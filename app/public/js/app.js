@@ -15,6 +15,7 @@ var app = new Vue({
 	  radio_number:'',
 	  station_num:'',
     newmemberForm: {}
+    //TODO add edit member and new certification
   },
 
   methods: {
@@ -51,9 +52,9 @@ var app = new Vue({
 
       // TODO: Validate the data!
 
-      fetch('api/records/post.php', {
+      fetch('?', {
         method:'POST',
-        body: JSON.stringify(this.newPtForm),
+        body: JSON.stringify(this.newmemberForm),
         headers: {
           "Content-Type": "application/json; charset=utf-8"
         }
