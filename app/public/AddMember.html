@@ -24,13 +24,16 @@
             <a class="nav-link" href="Home.html">Home <span class="sr-only"></span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">Members<span class="sr-only"></span></a>
+            <a class="nav-link" href="">View Members<span class="sr-only"></span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="Certification.html">Certifications<span class="sr-only"></span></a>
+            <a class="nav-link" href="">Edit Members<span class="sr-only"></span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">Expired Certifications<span class="sr-only"></span></a>
+            <a class="nav-link" href="">View Certifications<span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="EditCertification1.html">Edit Certifications<span class="sr-only"></span></a>
           </li>
         </ul>
 
@@ -38,72 +41,42 @@
     </nav>
 
 
-
-    <h1>Certifications</h1>
+    <h1></h1>
 
 
 
 
 
     <!-- Table -->
-    <div class="container-fluid">
-
-      <table  class="sort table table-hover">
-      <thead>
-        <tr>
-          <th >Certification ID</th>
-          <th >Certification Name</th>
-          <th >Agency</th>
-          <th >Start Date</th>
-          <th >Expiration Date</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </tbody>
-      </table>
-
-</div>
 
 
     <div class="container-fluid">
         <form method="post" v-on:submit.prevent="">
-            <h3>Certification Record</h3>
+            <h3>Add Member Record</h3>
+
 
             <div class="form-group">
-            <label for="">Certification Name</label>
+            <label for="">Member First Name</label>
             <input type="text" placeholder="Jane">
           </div>
           <div class="form-group">
-            <label for="">Agency</label>
+            <label for="">Member Last Name</label>
             <input type="text" placeholder="Doe">
           </div>
           <div class="form-group">
-            <label for="">Start Date</label>
+            <label for="">MemberID</label>
             <input type="number">
           </div>
           <div class="form-group">
-            <label for="">Expiration Date</label>
+            <label for="">Station</label>
+            <input type="text" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="">Contact</label>
+            <input type="text" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="">Certifications</label>
             <input type="text" placeholder="">
           </div>
 
