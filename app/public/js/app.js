@@ -14,7 +14,9 @@ var app = new Vue({
 	  position:'',
 	  radio_number:'',
 	  station_num:'',
-    newmemberForm: {}
+    newmemberForm: {},
+    editMemberForm: {},
+    newCertification: {}
     //TODO add edit member and new certification
   },
 
