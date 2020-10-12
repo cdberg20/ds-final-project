@@ -34,8 +34,6 @@
 
       </div>
     </nav>
-    <button type="button" name="button">View Expired</button>
-    <button type="button" name="button">View Member List</button>
 
 
     <h1></h1>
@@ -43,54 +41,46 @@
 
 
 
-
+    <select class="form-control" >
+                  <option value=""></option>
+                  <option value=""></option>
+                  <option value=""></option>
+                </select>
     <!-- Table -->
+
+
     <div class="container-fluid">
+        <form method="post" v-on:submit.prevent="">
+            <h3>Edit Member Record</h3>
 
-      <table  class="sort table table-hover">
-      <thead>
-        <tr>
-          <th >Member Frist Name</th>
-          <th >Member Last Name</th>
-          <th >MemberID</th>
-          <th >Station</th>
-          <th >Contact</th>
-          <th >Certifications</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </tbody>
-      </table>
+            <div class="form-group">
+            <label for="">Member First Name</label>
+            <input type="text" placeholder="Jane">
+          </div>
+          <div class="form-group">
+            <label for="">Member Last Name</label>
+            <input type="text" placeholder="Doe">
+          </div>
+          <div class="form-group">
+            <label for="">MemberID</label>
+            <input type="number">
+          </div>
+          <div class="form-group">
+            <label for="">Station</label>
+            <input type="text" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="">Contact</label>
+            <input type="text" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="">Certifications</label>
+            <input type="text" placeholder="">
+          </div>
 
-</div>
-
-<a href="AddMember.html"><button type="" class="btn btn-primary">Add Member</button></a>
-<a href="EditMember.html"><button type="" class="btn btn-primary">Edit Member</button></a>
-
+          <button type="submit" class="btn btn-primary">Save</button>
+          </form>
+      </div>
 
 
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
