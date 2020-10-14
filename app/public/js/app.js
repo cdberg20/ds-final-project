@@ -23,7 +23,6 @@ var app = new Vue({
   },
 
   methods: {
-    //for input from new member form page
     newMemberData() {
       return {
         first_name:'',
