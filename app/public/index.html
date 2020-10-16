@@ -48,6 +48,22 @@
     <h1></h1>
 
 
+<div class="container-fluid">
+  <div class="row" id="membersIndex">
+    <div class="col-lg-3 col-md-3 col-sm-3 sol-xs-3">
+      <div class="members" v-for="member in memberList">
+        <span class="lastname">Member ID: {{ member.memberID }}</span>,<br>
+        <span class="firstname">First Name: {{ member.first_name }}</span>,<br>
+        <span class="lastname">Last Name: {{ member.last_name }}</span>,<br>
+        <span class="memberID">Member ID: {{ member.memberID }}</span>,<br>
+        <span class="station">Station: {{ member.station_num }}</span>,<br>
+        <span class="contact">Contact: {{ member.phone }}</span>,<br>
+        <span class="status">Status: {{ member.is_active }}</span>,<br>
+      </div><br>
+    </div>
+  </div>
+</div>
+
 
 
 
