@@ -1,8 +1,8 @@
 <?php
 
-reuire 'common.php':
+require 'common.php';
 
-$db = Dbconnection::getConnection();
+$db = DbConnection::getConnection();
 
 $sql = 'SELECT * FROM members';
 $vars = [];
@@ -12,7 +12,7 @@ if (isset($Get['memberID'])) {
   $vars = [ $_GET['memberID'] ];
 }
 
-$stmt = db ->prepare($sql);
+$stmt = $db->prepare($sql);
 $stmt->execute($vars);
 
 $members = $stmt->fetchAll();

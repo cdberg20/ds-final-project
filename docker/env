@@ -6,7 +6,7 @@
 #
 # Do NOT ever include your *real* env in version control
 
-MYSQL_DATABASE=database-practice
+MYSQL_DATABASE=PRACTICE3_DS_PROJECT
 MYSQL_HOST=database-practice.ccof2wosc4jl.us-east-1.rds.amazonaws.com
 MYSQL_USER=practiceadmin
 MYSQL_PASSWORD=Password123
