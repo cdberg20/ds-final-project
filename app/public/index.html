@@ -41,15 +41,15 @@
 
       </div>
     </nav>
-    <button type="button" name="button">View Expired</button>
-    <button type="button" name="button">View Member List</button>
+    <a href="expired.html"><button type="button" name="button">View Expired</button></a>
+    <a href="memberlist.html"><button type="button" name="button">View Member List</button></a>
 
 
     <h1></h1>
 
 
-<div class="container-fluid">
-  <div class="row" id="membersIndex">
+<div id="member"class="container-fluid">
+  <div class="row">
     <div class="col-lg-3 col-md-3 col-sm-3 sol-xs-3">
       <div class="members" v-for="member in memberList">
         <span class="memberID">Member ID: {{ member.memberID }}</span>,<br>
@@ -63,6 +63,15 @@
   </div>
 </div>
 
+//v-model
+
+<div class="form-group col-3">
+
+ <label for="firstName">First Name</label>
+
+ <input type="text" class="form-control" id="firstName" aria-describedby="First" placeholder="First Name" v-model="member.first_name">
+
+ </div>
 
 
 
@@ -119,6 +128,7 @@
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+      <script src="js/app.js"></script>
 
 </body>
 

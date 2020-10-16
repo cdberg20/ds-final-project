@@ -23,7 +23,7 @@ var app = new Vue({
     // newCertificationForm: {},
     // certRecordList: []
     //TODO add edit member and new certification
-  }
+  },
 
   methods: {
 
