@@ -49,71 +49,44 @@
 
 
 <div id="member"class="container-fluid">
-  <div class="row">
-    <div class="col-lg-3 col-md-3 col-sm-3 sol-xs-3">
-      <div class="members" v-for="member in memberList">
-        <span class="memberID">Member ID: {{ member.memberID }}</span>,<br>
-        <span class="firstname">First Name: {{ member.first_name }}</span>,<br>
-        <span class="lastname">Last Name: {{ member.last_name }}</span>,<br>
-        <span class="station">Station: {{ member.station_num }}</span>,<br>
-        <span class="contact">Contact: {{ member.phone }}</span>,<br>
-        <span class="status">Status: {{ member.is_active }}</span>,<br>
-      </div><br>
-    </div>
-  </div>
-</div>
+<!--
 
-//v-model
 
-<div class="form-group col-3">
+<div id="member" class="form-group col-3">
 
  <label for="firstName">First Name</label>
 
- <input type="text" class="form-control" id="firstName" aria-describedby="First" placeholder="First Name" v-model="member.first_name">
+ <input type="text" class="form-control" id="firstName" aria-describedby="First" placeholder="First Name" v-model="memberList.first_name">
 
  </div>
-
+-->
 
 
     <!-- Table -->
-    <div class="container-fluid">
+
 
       <table  class="sort table table-hover">
       <thead>
         <tr>
+          <th >MemberID</th>
           <th >Member Frist Name</th>
           <th >Member Last Name</th>
-          <th >MemberID</th>
           <th >Station</th>
           <th >Contact</th>
           <th >Status</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+        <tr v-for="m in memberList">
+          <td>{{ m.memberID }}</td>
+          <td>{{ m.first_name }}</td>
+          <td>{{ m.last_name }}</td>
+          <td>{{ m.station_num }}</td>
+          <td>{{ m.phone }}</td>
+          <td>{{ m.is_active }}</td>
+
         </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
+
       </tbody>
       </table>
 

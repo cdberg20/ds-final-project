@@ -31,12 +31,16 @@ var app = new Vue({
       fetch('api/members/index.php')
       .then(response => response.json())
       .then(json => {
-        this.member=json;
-        console.log(this.member);
+        this.memberList=json;
+
+        console.log(this.memberList);
       });
     }
-  }
-
+  },
+    created() {
+      this.fetchMember();
+    },
+})
 
 
 //     newMemberData() {
