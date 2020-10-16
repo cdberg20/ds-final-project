@@ -1,9 +1,9 @@
 {
-    "name": "iu-msis/project-triage-2020",
-    "description": "An in-class example project",
-    "license": "private",
+    "name": "cdberg20/ds-final-project",
+    "description": "Final project for Team21",
+    "license": "public",
     "authors": [{
-        "name": "Tom Gregory"
+        "name": "Carley Berg, Jamon Gaines, Matt Smith, Zehui Xiong"
     }],
     "require": {
       "ramsey/uuid": "^4.1"
