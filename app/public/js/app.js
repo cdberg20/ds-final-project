@@ -17,13 +17,13 @@ var app = new Vue({
   	  radio_number:'',
   	  station_num:'',
       phone:''
-    }],
+    }]
     // newmemberForm: {},
     // editMemberForm: {},
     // newCertificationForm: {},
     // certRecordList: []
     //TODO add edit member and new certification
-  },
+  }
 
   methods: {
 
