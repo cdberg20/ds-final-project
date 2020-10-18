@@ -53,33 +53,62 @@
     <!-- Table -->
 
 
-    <div class="container-fluid">
-        <form method="post" v-on:submit.prevent="">
+    <div id="member" class="container-fluid">
+        <form method="post" v-on:submit.prevent="addNewMember()">
             <h3>Add Member Record</h3>
 
             <div class="form-group">
-            <label for="">Member First Name</label>
-            <input type="text" placeholder="Jane">
+            <label for="first_name">Member First Name</label>
+            <input v-model="member.first_name" type="text" placeholder="First">
           </div>
           <div class="form-group">
-            <label for="">Member Last Name</label>
-            <input type="text" placeholder="Doe">
+            <label for="last_name">Member Last Name</label>
+            <input v-model="member.last_name" type="text" placeholder="Last">
+          </div><br>
+          <h4>Address</h4>
+          <div class="form-group">
+            <label for="street">Street</label>
+            <input v-model="member.street" type="number">
           </div>
           <div class="form-group">
-            <label for="">MemberID</label>
-            <input type="number">
+            <label for="city">City</label>
+            <input v-model="member.city" type="text" placeholder="">
           </div>
           <div class="form-group">
-            <label for="">Station</label>
-            <input type="text" placeholder="">
+            <label for="zip">Zip</label>
+            <input v-model="member.zip"  type="text" placeholder="">
+          </div><br><br>
+          <div class="form-group">
+            <label for="date_of_birth">Birth Day</label>
+            <input v-model="member.date_of_birth" type="text" placeholder="yyyy.mm.dd">
           </div>
           <div class="form-group">
-            <label for="">Contact</label>
-            <input type="text" placeholder="">
+            <label for="start_date">Start Date</label>
+            <input v-model="member.start_date" type="text" placeholder="yyyy.mm.dd">
           </div>
           <div class="form-group">
-            <label for="">Certifications</label>
-            <input type="text" placeholder="">
+            <label for="is_active">Active Status</label>
+            <input v-model="member.active" type="text" placeholder="Active">
+          </div>
+          <div class="form-group">
+            <label for="gender">Gender</label>
+            <input v-model="member.gender" type="text" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="position">Position</label>
+            <input v-model="member.position" type="text" placeholder="Captain">
+          </div>
+          <div class="form-group">
+            <label for="radio_number">Radio Number</label>
+            <input v-model="member.radio_number" type="text" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="station_num">Station Number</label>
+            <input v-model="member.station_num" type="text" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="phone">Preferred Phone Number</label>
+            <input v-model="member.phone" type="text" placeholder="0000000000">
           </div>
 
           <button type="submit" class="btn btn-primary">Save</button>
