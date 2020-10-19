@@ -2,22 +2,22 @@ var app = new Vue({
   el: '#addMemberApp',
 //initialize
   data: {
-    // memberList: [{
-    //   memberID:'',
-    //   first_name:'',
-  	//   last_name:'',
-  	//   street:'',
-  	//   city:'',
-  	//   zip:'',
-  	//   date_of_birth:'',
-  	//   start_date:'',
-  	//   is_active:'',
-  	//   gender:'',
-  	//   position:'',
-  	//   radio_number:'',
-  	//   station_num:'',
-    //   phone:''
-    // }],
+    memberList: [{
+      memberID:'',
+      first_name:'',
+  	  last_name:'',
+  	  street:'',
+  	  city:'',
+  	  zip:'',
+  	  date_of_birth:'',
+  	  start_date:'',
+  	  is_active:'',
+  	  gender:'',
+  	  position:'',
+  	  radio_number:'',
+  	  station_num:'',
+      phone:''
+    }],
     newmemberForm: {
       memberID:'',
       first_name:'',
@@ -82,7 +82,7 @@ var app = new Vue({
        phone:''
      }
    }
-  },
+  }
     // created() {
     //   this.addNewMember();
     //   this.handleNewMemberForm();
