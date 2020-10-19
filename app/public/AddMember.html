@@ -53,33 +53,66 @@
     <!-- Table -->
 
 
-    <div class="container-fluid">
-        <form method="post" v-on:submit.prevent="">
+    <div id="member" class="container-fluid">
+        <form method="post" v-on:submit.prevent="addNewMember()">
             <h3>Add Member Record</h3>
 
             <div class="form-group">
-            <label for="">Member First Name</label>
-            <input type="text" placeholder="Jane">
+            <label for="first_name">Member First Name</label>
+            <input v-model="newmemberForm.first_name" id="newMemberFirstName" type="text" placeholder="First">
           </div>
           <div class="form-group">
-            <label for="">Member Last Name</label>
-            <input type="text" placeholder="Doe">
+            <label for="last_name">Member Last Name</label>
+            <input v-model="newmemberForm.last_name" type="text" placeholder="Last">
+          </div><br>
+          <h4>Address</h4>
+          <div class="form-group">
+            <label for="street">Street</label>
+            <input v-model="newmemberForm.street" type="text">
           </div>
           <div class="form-group">
-            <label for="">MemberID</label>
-            <input type="number">
+            <label for="city">City</label>
+            <input v-model="newmemberForm.city" type="text" placeholder="">
           </div>
           <div class="form-group">
-            <label for="">Station</label>
-            <input type="text" placeholder="">
+            <label for="zip">Zip</label>
+            <input v-model="newmemberForm.zip"  type="number" placeholder="">
+          </div><br>
+            <h4>Personal Information</h4>
+          <div class="form-group">
+            <label for="date_of_birth">Birth Day</label>
+            <input v-model="newmemberForm.date_of_birth" type="text" placeholder="yyyy.mm.dd">
+          </div>
+
+          <div class="form-group">
+            <label for="gender">Gender</label>
+            <input v-model="newmemberForm.gender" type="text" placeholder="">
+          </div><br>
+          <h4>Work Information</h4>
+
+          <div class="form-group">
+            <label for="start_date">Start Date</label>
+            <input v-model="newmemberForm.start_date" type="text" placeholder="yyyy.mm.dd">
           </div>
           <div class="form-group">
-            <label for="">Contact</label>
-            <input type="text" placeholder="">
+            <label for="is_active">Active Status</label>
+            <input v-model="newmemberForm.active" type="text" placeholder="Active">
           </div>
           <div class="form-group">
-            <label for="">Certifications</label>
-            <input type="text" placeholder="">
+            <label for="position">Position</label>
+            <input v-model="newmemberForm.position" type="text" placeholder="Captain">
+          </div>
+          <div class="form-group">
+            <label for="radio_number">Radio Number</label>
+            <input v-model="newmemberForm.radio_number" type="number" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="station_num">Station Number</label>
+            <input v-model="newmemberForm.station_num" type="number" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="phone">Preferred Phone Number</label>
+            <input v-model="newmemberForm.phone" type="number" placeholder="0000000000">
           </div>
 
           <button type="submit" class="btn btn-primary">Save</button>
@@ -92,6 +125,8 @@
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+      <script src="js/app.createmember.js"></script>
 
 </body>
 
