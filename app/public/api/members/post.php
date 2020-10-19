@@ -25,15 +25,15 @@ $stmt->execute([
   $_POST['first_name'],
   $_POST['last_name'],
   $_POST['street'],
-  $_POST['city']
+  $_POST['city'],
   $_POST['zip'],
   $_POST['date_of_birth'],
   $_POST['start_date'],
-  $_POST['is_active']
+  $_POST['is_active'],
   $_POST['gender'],
   $_POST['position'],
   $_POST['radio_number'],
-  $_POST['station_num']
+  $_POST['station_num'],
   $_POST['phone']
 ]);
 

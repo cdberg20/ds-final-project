@@ -71,14 +71,12 @@ var app = new Vue({
      console.log("Creating (POSTing)...!");
      console.log(this.newmemberForm);
    },
-   handleNewMemberForm( evt ) {
-     console.log("Member form submitted!");
-
-     console.log(this.newmemberForm);
-   },
+   // handleNewMemberForm( evt ) {
+   //   console.log("Member form submitted!");
+   //   console.log(this.newmemberForm);
+   // },
    newMemberData() {
      return {
-       memberID:'',
        first_name:'',
        last_name:'',
        street:'',
@@ -91,12 +89,14 @@ var app = new Vue({
        position:'',
        radio_number:'',
        station_num:'',
+       phone:''
      }
-   },
+   }
   },
     created() {
       this.fetchMember();
       this.addNewMember();
+      // this.handleNewMemberForm();
     },
 })
 
