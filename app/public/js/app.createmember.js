@@ -83,8 +83,8 @@ var app = new Vue({
      }
    }
   },
-    created() {
-      this.addNewMember();
-      this.handleNewMemberForm();
-    },
+    // created() {
+    //   this.addNewMember();
+    //   this.handleNewMemberForm();
+    // },
 })
