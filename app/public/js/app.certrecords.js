@@ -10,7 +10,8 @@ var app = new Vue({
       first_name:'',
       last_name:''
     }],
-    currentDate:''
+    currentDate:'',
+    expiration_date:''
   },
 
   methods: {
@@ -21,9 +22,14 @@ var app = new Vue({
       .then(response => response.json())
       .then(json => {
         this.certRecordList=json;
-
         console.log(this.certRecordList);
+        this.date_function();
+        console.log(typeof this.expiration);
       });
+      // var expiration_date = new Date();
+      //
+      // expiration_date = Date.parse(this.expiration);
+      // console.log(expiration_date);
     },
 
     date_function(){
@@ -33,8 +39,8 @@ var app = new Vue({
       var yyyy = currentDate.getFullYear();
 
       currentDate = yyyy + '-' + mm + '-' + dd;
-      // currentDate = currentDate.toJSON(); 
       console.log(currentDate);
+      console.log(typeof currentDate);
 
       }
 
@@ -42,6 +48,6 @@ var app = new Vue({
   },
     created() {
       this.fetchCertRecords();
-      this.date_function();
+
     },
 })
