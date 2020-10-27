@@ -15,7 +15,6 @@
 
 <body>
   <img src="img\header2.png" width="100%">
-
   <!-- Nav bar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
@@ -48,30 +47,48 @@
 
 
 
-    <h1>Add Certifications</h1>
+    <h1>View All Certifications</h1>
 
+<!--
 
+Select Certification
+    <select class="form-control" >
+                  <option value=""></option>
+                  <option value=""></option>
+                  <option value=""></option>
+                </select>
 
-    <div id="addCertificationsApp" class="container-fluid">
-        <form method="post" v-on:submit.prevent="addNewCertRecord()">
-            <h3>Certification Record</h3>
+Select Certification status
+    <label for="select"><input type="radio" name="select">Current</label>
+    <label for="select"><input type="radio" name="select">Expired</label>
+    <label for="select"><input type="radio" name="select">Both</label>
+ -->
 
-            <div class="form-group">
-            <label for="memID">MemberID</label>
-            <input v-model="newCertForm.memberID"  type="text" placeholder="">
-          </div>
-          <div class="form-group">
-            <label for="certificationID">Certification ID</label>
-            <input v-model="newCertForm.certID" type="text" placeholder="">
-          </div>
-          <div class="form-group">
-            <label for="expirationDate">Expiration Date</label>
-            <input v-model="newCertForm.expiration" type="date" placeholder="">
-          </div>
+  <a href="AddCertification.html"><button type="submit" class="btn btn-primary">Add Certification</button><a><br>
 
-          <button type="submit" class="btn btn-primary">Save</button>
-          </form>
-      </div>
+    <!-- Table -->
+<div id="certificationsApp" class="container-fluid">
+
+      <table  class="sort table table-hover">
+      <thead>
+        <tr>
+          <th>Certification ID</th>
+          <th>Certification</th>
+          <th>Certifying Agency</th>
+          <th>Valid for:</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="c in certList">
+          <td>{{ c.certID }}</td>
+          <td>{{ c.name }}</td>
+          <td>{{ c.agency }}</td>
+          <td>{{ c.expiration }} years</td>
+
+        </tbody>
+      </table>
+
+</div>
 
 
 
@@ -81,8 +98,8 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="js/createCertRecord.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="js/app.certification.js"></script>
 
 
 </body>

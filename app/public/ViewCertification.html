@@ -31,7 +31,10 @@
             <a class="nav-link" href="EditMember.html">Edit Member<span class="sr-only"></span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="ViewCertification.html">Certifications<span class="sr-only"></span></a>
+            <a class="nav-link" href="OCFRcertifications.html">Certifications<span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ViewCertification.html">Member Certifications<span class="sr-only"></span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="AddCertification.html">Add Certification<span class="sr-only"></span></a>
@@ -44,60 +47,51 @@
 
 
 
-    <h1>View all Certifications</h1>
+    <h1>Member-Held Certifications</h1>
 
+<!--
 
-
-  <!-- Select Certification -->
+Select Certification
     <select class="form-control" >
                   <option value=""></option>
                   <option value=""></option>
                   <option value=""></option>
                 </select>
 
-  <!-- Select Certification status-->
+Select Certification status
     <label for="select"><input type="radio" name="select">Current</label>
     <label for="select"><input type="radio" name="select">Expired</label>
     <label for="select"><input type="radio" name="select">Both</label>
+ -->
 
-
+  <a href="AddCertification.html"><button type="submit" class="btn btn-primary">Add Certification</button><a><br>
 
     <!-- Table -->
-    <div class="container-fluid">
+<div id="displayCertRecordsApp" class="container-fluid">
 
       <table  class="sort table table-hover">
       <thead>
         <tr>
-          <th >Member ID</th>
-          <th >Member Name</th>
-          <th >Expiration Date</th>
-          <th >Status</th>
+          <th>Member ID</th>
+          <th>Member Name</th>
+          <th>Expiration Date</th>
+          <th>Status</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </tbody>
+        <tr v-for="r in certRecordList">
+          <td>{{ r.memberID }}</td>
+          <td>{{ r.last_name }}, {{ r.first_name }}</td>
+          <td>{{ r.expiration }}</td>
+          <td>
+            <div v-if="r.expiration < currentDate">Expired</div>
+            <div v-else>Current</div>
+          </td>
+        </tbody>
       </table>
 
 </div>
-  <a href="AddCertification.html"><button type="submit" class="btn btn-primary">Add Certification</button><a>
+
 
 
 
@@ -106,7 +100,8 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="js/app.certrecords.js"></script>
 
 
 </body>

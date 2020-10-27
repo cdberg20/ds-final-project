@@ -17,8 +17,23 @@ var app = new Vue({
   	  radio_number:'',
   	  station_num:'',
       phone:''
-    }]
-    // newmemberForm: {},
+    }],
+    newmemberForm: {
+      memberID:'',
+      first_name:'',
+      last_name:'',
+      street:'',
+      city:'',
+      zip:'',
+      date_of_birth:'',
+      start_date:'',
+      is_active:'',
+      gender:'',
+      position:'',
+      radio_number:'',
+      station_num:'',
+      phone:''
+    },
     // editMemberForm: {},
     // newCertificationForm: {},
     // certRecordList: []
@@ -31,31 +46,22 @@ var app = new Vue({
       fetch('api/members/index.php')
       .then(response => response.json())
       .then(json => {
-        this.member=json;
-        console.log(this.member);
+        this.memberList=json;
+
+        console.log(this.memberList);
       });
-    }
-  }
+    },
+
+
+  },
+    created() {
+      this.fetchMember();
+            // this.handleNewMemberForm();
+    },
+})
 
 
 
-//     newMemberData() {
-//       return {
-//         memberID:'',
-//         first_name:'',
-//     	  last_name:'',
-//     	  street:'',
-//     	  city:'',
-//     	  zip:'',
-//     	  date_of_birth:'',
-//     	  start_date:'',
-//     	  is_active:'',
-//     	  gender:'',
-//     	  position:'',
-//     	  radio_number:'',
-//     	  station_num:'',
-//       }
-//     },
 //     dateSince(d) {
 //       // Uses Luxon date API (see comment in index.html file)
 //       return moment.utc(d).calendar();
