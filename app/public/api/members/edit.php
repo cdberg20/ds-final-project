@@ -17,11 +17,12 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
-  'UPDATE members (first_name, last_name, street, city, zip, date_of_birth, start_date, is_active, gender, position, radio_number, station_num, phone)
+  'UPDATE members (first_name, last_name, street, city, zip, date_of_birth, start_date, is_active, gender, position, radio_number, station_num, phone) where memberID = ?
   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
 );
 
 $stmt->execute([
+  //$_POST['memberID'];
   $_POST['first_name'],
   $_POST['last_name'],
   $_POST['street'],
