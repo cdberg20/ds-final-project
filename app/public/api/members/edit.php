@@ -22,6 +22,7 @@ $stmt = $db->prepare(
 );
 
 $stmt->execute([
+  //$_POST['memberID'];
   $_POST['first_name'],
   $_POST['last_name'],
   $_POST['street'],
