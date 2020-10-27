@@ -15,6 +15,6 @@ include("loginserv.php");
       <input type="text" placeholder="Username" id="user" name="user"><br/><br/>
       <input type="text" placeholder="Password" id="password" name="password"><br/><br/>
       <input type="submit" value="Login" name="submit">
-    <span><?php.echo $error; ?></span>
+    <span><?php echo $error; ?></span>
     </body>
     </html>

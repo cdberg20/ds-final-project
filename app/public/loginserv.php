@@ -1,5 +1,5 @@
 <?php
-require common.php
+require 'common.php';
 $error='';
 if(isset($_POST['submit'])){
   if(empty($_POST['user']) || empty($_POST['pass'])){
