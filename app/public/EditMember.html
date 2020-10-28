@@ -51,23 +51,16 @@
 
 
 <div id="editMemberApp">
-    <select class="form-control" v-model="selectedMember.memberID">
-          <option v-for="x in editmemberList" :value="x.memberID">{{x.memberID}}</option>
+    <select class="form-control" v-model="selectedMember.memberID" >
+          <option v-for="edit in editmemberList" :value="edit.memberID">{{edit.memberID}}</option>
       </select>
-    </div>
-
-
     <!-- Table -->
-
-<div>
-        <form method="post" v-on:submit.prevent="updateMember()">
+        <form method="post" v-on:submit.prevent="updateMember()" >
             <h3>Edit Member Record</h3>
-            <div class="form-group">
-            <label for="">Member ID</label>
-            <input type="text" placeholder="ID #">
-            <div class="form-group">
+
+          <div>
             <label for="first_name">Member First Name</label>
-            <input v-model="selectedMember.first_name" id="editMemberFirstName" type="text" placeholder="First">
+            <input v-model="selectedMember.first_name" id="editMemberFirstName" value="selectedMember.first_name" id="editMemberFirstName" type="text" placeholder="First">
           </div>
           <div class="form-group">
             <label for="last_name">Member Last Name</label>
@@ -126,6 +119,7 @@
           <button type="submit" class="btn btn-primary">Save</button>
           </form>
       </div>
+  </div>
 
 
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
