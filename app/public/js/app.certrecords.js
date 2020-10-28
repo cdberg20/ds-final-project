@@ -23,7 +23,7 @@ var app = new Vue({
       .then(json => {
         this.certRecordList=json;
         console.log(this.certRecordList);
-        this.date_function();
+        // this.date_function();
         console.log(typeof this.expiration);
       });
       // var expiration_date = new Date();
@@ -32,17 +32,17 @@ var app = new Vue({
       // console.log(expiration_date);
     },
 
-    date_function(){
-      var currentDate = new Date();
-      var dd = String(currentDate.getDate()).padStart(2, '0');
-      var mm = String(currentDate.getMonth() + 1).padStart(2, '0'); //January is 0!
-      var yyyy = currentDate.getFullYear();
-
-      currentDate = yyyy + '-' + mm + '-' + dd;
-      console.log(currentDate);
-      console.log(typeof currentDate);
-
-      }
+    // date_function(){
+    //   var currentDate = new Date();
+    //   var dd = String(currentDate.getDate()).padStart(2, '0');
+    //   var mm = String(currentDate.getMonth() + 1).padStart(2, '0'); //January is 0!
+    //   var yyyy = currentDate.getFullYear();
+    //
+    //   currentDate = yyyy + '-' + mm + '-' + dd;
+    //   console.log(currentDate);
+    //   console.log(typeof currentDate);
+    //
+    //   }
 
 
   },
