@@ -8,14 +8,17 @@ var app = new Vue({
       certID:'',
   	  expiration:'',
       first_name:'',
-      last_name:''
+      last_name:'',
+      name:''
     }],
     currentDate:'',
     expiration_date:''
   },
 
   methods: {
-
+    isExpired(dt) {
+       return dt < moment().format('YYYY-MM-DD');
+    },
 
     fetchCertRecords(){
       fetch('api/certrecords/memberindex.php')
