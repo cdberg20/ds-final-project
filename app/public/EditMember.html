@@ -50,77 +50,77 @@
 
 
 
+<div id="editMemberApp">
+    <select class="form-control" v-model="selectedMember.memberID">
+          <option v-for="x in editmemberList" :value="x.memberID">{{x.memberID}}</option>
+      </select>
+    </div>
 
-    <select class="form-control" >
-                  <option value=""></option>
-                  <option value=""></option>
-                  <option value=""></option>
-                </select>
+
     <!-- Table -->
 
-
-    <div class="container-fluid">
-        <form method="post" v-on:submit.prevent="">
+<div>
+        <form method="post" v-on:submit.prevent="updateMember()">
             <h3>Edit Member Record</h3>
             <div class="form-group">
             <label for="">Member ID</label>
             <input type="text" placeholder="ID #">
             <div class="form-group">
             <label for="first_name">Member First Name</label>
-            <input v-model="newmemberForm.first_name" id="newMemberFirstName" type="text" placeholder="First">
+            <input v-model="selectedMember.first_name" id="editMemberFirstName" type="text" placeholder="First">
           </div>
           <div class="form-group">
             <label for="last_name">Member Last Name</label>
-            <input v-model="newmemberForm.last_name" type="text" placeholder="Last">
+            <input v-model="selectedMember.last_name" type="text" placeholder="Last">
           </div><br>
           <h4>Address</h4>
           <div class="form-group">
             <label for="street">Street</label>
-            <input v-model="newmemberForm.street" type="text">
+            <input v-model="selectedMember.street" type="text">
           </div>
           <div class="form-group">
             <label for="city">City</label>
-            <input v-model="newmemberForm.city" type="text" placeholder="">
+            <input v-model="selectedMember.city" type="text" placeholder="">
           </div>
           <div class="form-group">
             <label for="zip">Zip</label>
-            <input v-model="newmemberForm.zip"  type="number" placeholder="">
+            <input v-model="selectedMember.zip"  type="number" placeholder="">
           </div><br>
             <h4>Personal Information</h4>
           <div class="form-group">
             <label for="date_of_birth">Birth Day</label>
-            <input v-model="newmemberForm.date_of_birth" type="text" placeholder="yyyy.mm.dd">
+            <input v-model="selectedMember.date_of_birth" type="text" placeholder="yyyy.mm.dd">
           </div>
 
           <div class="form-group">
             <label for="gender">Gender</label>
-            <input v-model="newmemberForm.gender" type="text" placeholder="">
+            <input v-model="selectedMember.gender" type="text" placeholder="">
           </div><br>
           <h4>Work Information</h4>
 
           <div class="form-group">
             <label for="start_date">Start Date</label>
-            <input v-model="newmemberForm.start_date" type="text" placeholder="yyyy.mm.dd">
+            <input v-model="selectedMember.start_date" type="text" placeholder="yyyy.mm.dd">
           </div>
           <div class="form-group">
             <label for="is_active">Active Status</label>
-            <input v-model="newmemberForm.active" type="text" placeholder="Active">
+            <input v-model="selectedMember.active" type="text" placeholder="Active">
           </div>
           <div class="form-group">
             <label for="position">Position</label>
-            <input v-model="newmemberForm.position" type="text" placeholder="Captain">
+            <input v-model="selectedMember.position" type="text" placeholder="Captain">
           </div>
           <div class="form-group">
             <label for="radio_number">Radio Number</label>
-            <input v-model="newmemberForm.radio_number" type="number" placeholder="">
+            <input v-model="selectedMember.radio_number" type="number" placeholder="">
           </div>
           <div class="form-group">
             <label for="station_num">Station Number</label>
-            <input v-model="newmemberForm.station_num" type="number" placeholder="">
+            <input v-model="selectedMember.station_num" type="number" placeholder="">
           </div>
           <div class="form-group">
             <label for="phone">Preferred Phone Number</label>
-            <input v-model="newmemberForm.phone" type="number" placeholder="0000000000">
+            <input v-model="selectedMember.phone" type="number" placeholder="0000000000">
           </div>
 
           <button type="submit" class="btn btn-primary">Save</button>
@@ -128,10 +128,12 @@
       </div>
 
 
+
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+      <script src="js/EditMember.app.js"></script>
 
 </body>
 

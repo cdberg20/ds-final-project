@@ -20,7 +20,20 @@ var app = new Vue({
       phone:''
     }],
     selectedMember: {
-      id:''
+      memberID:'',
+      first_name:'',
+  	  last_name:'',
+  	  street:'',
+  	  city:'',
+  	  zip:'',
+  	  date_of_birth:'',
+  	  start_date:'',
+  	  is_active:'',
+  	  gender:'',
+  	  position:'',
+  	  radio_number:'',
+  	  station_num:'',
+      phone:''
     },
     // editMemberForm: {},
     // newCertificationForm: {},
@@ -30,47 +43,70 @@ var app = new Vue({
 
   methods: {
 
+    fetchAllMembers(){
+      fetch('api/members/index.php')
+      .then(response => response.json())
+      .then(json => {
+        this.editmemberList=json;
+
+        console.log(this.editmemberList);
+      });
+    },
+
     updateMember(){
       fetch('api/members/edit.php', {
        method:'POST',
-       body: JSON.stringify(this.),
+       body: JSON.stringify(this.selectedMember),
        headers: {
          "Content-Type": "application/json; charset=utf-8"
        }
      })
-     // .then( response => response.json() )
-     // .then( json => {
-     //   console.log("Returned from post:", json);
-     //   // TODO: test a result was returned!
-     //   this.memberList.push(json[0]);
-     //   this.newmemberForm = this.newMemberData();
-     // });
+      .then( response => response.json() )
+      .then( json => {
+        console.log("Returned from post:", json);
+        // TODO: test a result was returned!
+        this.editmemberList.push(json[0]);
+        this.selectedMember = this.editMemberData();
+      });
      //
-     // console.log("Creating (POSTing)...!");
-     // console.log(this.newmemberForm);
+      console.log("Creating (POSTing)...!");
+      console.log(this.selectedMember);
    },
 
 
-   fetchAllMembers(){
-     fetch('api/members/index.php')
-     .then(response => response.json())
-     .then(json => {
-       this.editmemberList=json;
 
-       console.log(this.editmemberList);
-     });
-   }
+
+
+   editMemberData() {
+     return {
+       memberID:'',
+       first_name:'',
+       last_name:'',
+       street:'',
+       city:'',
+       zip:'',
+       date_of_birth:'',
+       start_date:'',
+       is_active:'',
+       gender:'',
+       position:'',
+       radio_number:'',
+       station_num:'',
+       phone:''
+     }
+   },
    displayMember(){
    for(member in editmemberList){
-   if(member.memberID == this.selectedMember.id){
+   if(member.memberID == this.selectedMember.memberID){
    this.selectedMember = member;
  }
+}},
 
-  }
-    // created() {
-    //   this.addNewMember();
+   created() {
+       this.fetchAllMembers();
     //   this.handleNewMemberForm();
-    // },
+   },
+}
 })
 
 /*data  -
