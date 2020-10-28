@@ -74,6 +74,7 @@ Select Certification status
         <tr>
           <th>Member ID</th>
           <th>Member Name</th>
+          <th>Certification</th>
           <th>Expiration Date</th>
           <th>Status</th>
         </tr>
@@ -82,10 +83,11 @@ Select Certification status
         <tr v-for="r in certRecordList">
           <td>{{ r.memberID }}</td>
           <td>{{ r.last_name }}, {{ r.first_name }}</td>
+          <td>{{ r.name }}</td>
           <td>{{ r.expiration }}</td>
           <td>
-            <div v-if="r.expiration < moment().format('YYYY MM DD')">Expired</div>
-            <div v-else>Current</div>
+            <span v-if="isExpired(r.expiration)">Expired</span>
+            <span v-else>Current</span>
           </td>
         </tbody>
       </table>
@@ -101,8 +103,9 @@ Select Certification status
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-<script src="js/app.certrecords.js"></script>
 <script src="js/moment.js"></script>
+<script src="js/app.certrecords.js"></script>
+
 
 
 </body>
