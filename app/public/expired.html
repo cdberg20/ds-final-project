@@ -52,17 +52,17 @@
   <!-- Clickable button that downloads .csv file with names of all recently expired certifications-->
   <body>
 
-      <h1>Expired</h1>
+      <h1>Expired Certifications</h1>
 
     <div id="displayExpiredCertApp" class="container-fluid">
 
-          <table  class="sort table table-hover">
+          <table id="expiredCert" class="sort table table-hover">
           <thead>
             <tr>
-              <th>Member ID</th>
-              <th>Member Name</th>
-              <th>Certification</th>
-              <th>Date Expired</th>
+              <th scope="col">Member ID</th>
+              <th scope="col">Member Name</th>
+              <th scope="col">Certification</th>
+              <th scope="col">Date Expired</th>
             </tr>
           </thead>
           <tbody>
@@ -84,6 +84,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/expiredCert.app.js"></script>
+    <!--Table sort plugins from http://tristen.ca/tablesort/demo/ -->
+    <!-- <script src='js/tablesort.number.min.js'></script> -->
+    <script src="js/tablesort.min.js"></script>
+    <!-- Table sort plugin from http://tristen.ca/tablesort/demo/ -->
+    <script>new Tablesort(document.getElementById('expiredCert'));</script>
 
   </body>
 </html>
