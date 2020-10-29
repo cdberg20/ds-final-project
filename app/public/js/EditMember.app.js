@@ -3,40 +3,10 @@ var app = new Vue({
   el: '#editMemberApp',
 //initialize
   data: {
-    editmemberList: [{
-      memberID:'',
-      first_name:'',
-  	  last_name:'',
-  	  street:'',
-  	  city:'',
-  	  zip:'',
-  	  date_of_birth:'',
-  	  start_date:'',
-  	  is_active:'',
-  	  gender:'',
-  	  position:'',
-  	  radio_number:'',
-  	  station_num:'',
-      phone:'',
-      email:''
-    }],
-    selectedMember: {
-      memberID:'',
-      first_name:'',
-  	  last_name:'',
-  	  street:'',
-  	  city:'',
-  	  zip:'',
-  	  date_of_birth:'',
-  	  start_date:'',
-  	  is_active:'',
-  	  gender:'',
-  	  position:'',
-  	  radio_number:'',
-  	  station_num:'',
-      phone:'',
-      email:''
-    },
+    editmemberList: [
+    ],
+    selectedMember: null,
+    selectedMemberID: null
     // editMemberForm: {},
     // newCertificationForm: {},
     // certRecordList: []
@@ -90,31 +60,11 @@ var app = new Vue({
        position:'',
        radio_number:'',
        station_num:'',
-       phone:'',
-       email:''
+       phone:''
      }
-   },
-   displayMember(){
-   for(edit in editmemberList){
-   if(edit.memberID == this.selectedMember.memberID){
-     this.selectedMember = edit;
-     document.getElementById('editMemberFirstName').value = selectedMember.firstName;
-   // selectedMember.last_name=editmemberList.last_name;
-   // selectedMember.street=editmemberList.street;
-   // selectedMember.zip=editmemberList.zip;
-   // selectedMember.date_of_birth=editmemberList.date_of_birth;
-   // selectedMember.start_date=editmemberList.start_date;
-   // selectedMember.is_active=editmemberList.is_active;
-   // selectedMember.gender=editmemberList.gender;
-   // selectedMember.position=editmemberList.position;
-   // selectedMember.radio_number=editmemberList.radio_number;
-   // selectedMember.station_num=editmemberList.station_num;
-   // selectedMember.phone=editmemberList.phone;
- }
-}},
+   }
+ },
 
-
-},
 created() {
     this.fetchAllMembers();
  //   this.handleNewMemberForm();
