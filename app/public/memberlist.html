@@ -51,20 +51,50 @@
 
   <!-- Clickable button that downloads .csv file with names of all recently recruited firefighters-->
   <body>
-    <div class="container">
-      <h1>Member List</h1>
-      <button type="button" class="btn btn-success">Download .csv file</button>
-    </div>
 
-    <!-- Copyright info-->
-    <p class="mt-5 mb-3 text-muted">© Team 21, LLC. 2020</p>
+<h1>Member List</h1>
+      <div id="member"class="container-fluid">
+
+          <!-- Table -->
 
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+            <table  class="sort table table-hover">
+            <thead>
+              <tr>
+
+                <th >Member Frist Name</th>
+                <th >Member Last Name</th>
+                <th >Station</th>
+                <th >Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="m in memberList">
+
+                <td>{{ m.first_name }}</td>
+                <td>{{ m.last_name }}</td>
+                <td>{{ m.station_num }}</td>
+                <td>{{ m.email }}</td>
+
+              </tr>
+
+            </tbody>
+            </table>
+
+            <a href="AddMember.html"><button type="" class="btn btn-primary">Add Member</button></a>
+            <a href="EditMember.html"><button type="" class="btn btn-primary">Edit Member</button></a>
 
 
-  </body>
+
+
+      </div>
+
+
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+            <script src="js/app.js"></script>
+
+      </body>
 </html>

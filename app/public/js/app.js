@@ -16,7 +16,8 @@ var app = new Vue({
   	  position:'',
   	  radio_number:'',
   	  station_num:'',
-      phone:''
+      phone:'',
+      email:''
     }],
     newmemberForm: {
       memberID:'',
@@ -32,7 +33,8 @@ var app = new Vue({
       position:'',
       radio_number:'',
       station_num:'',
-      phone:''
+      phone:'',
+      email:''
     },
     // editMemberForm: {},
     // newCertificationForm: {},
