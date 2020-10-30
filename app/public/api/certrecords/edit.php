@@ -17,26 +17,13 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
-  'UPDATE members SET first_name = ?, last_name = ?, street = ?, city = ?, zip = ?, date_of_birth = ?, start_date = ?, is_active = ?, gender = ?, position = ?, radio_number = ?, station_num = ?, phone = ?, email = ? WHERE memberID = ?;'
-
+  'UPDATE certifications_records SET memberID = ?, certID = ?, expiration = ? WHERE cert_recordID = ?;'
 );
 
 $stmt->execute([
-  // $_POST['memberID'],
-  $_POST['first_name'],
-  $_POST['last_name'],
-  $_POST['street'],
-  $_POST['city'],
-  $_POST['zip'],
-  $_POST['date_of_birth'],
-  $_POST['start_date'],
-  $_POST['is_active'],
-  $_POST['gender'],
-  $_POST['position'],
-  $_POST['radio_number'],
-  $_POST['station_num'],
-  $_POST['phone'],
-  $_POST['email']
+  $_POST['memberID'],
+  $_POST['certID'],
+  $_POST['expiration'],
 ]);
 
 // If needed, get auto-generated PK from DB
@@ -46,4 +33,4 @@ $stmt->execute([
 // Here, instead of giving output, I'm redirecting to the SELECT API,
 // just in case the data changed by entering it
 header('HTTP/1.1 303 See Other');
-header('Location: ../members/');
+header('Location: ../certrecords/');

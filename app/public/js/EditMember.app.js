@@ -1,10 +1,8 @@
-
 var app = new Vue({
   el: '#editMemberApp',
 //initialize
   data: {
-    editmemberList: [
-    ],
+    editmemberList: [],
     selectedMember: null,
     selectedMemberID: null
     // editMemberForm: {},
@@ -32,15 +30,14 @@ var app = new Vue({
        headers: {
          "Content-Type": "application/json; charset=utf-8"
        }
-     })
-      .then( response => response.json() )
-      .then( json => {
+      })
+      .then(response => response.json() )
+      .then(json => {
         console.log("Returned from post:", json);
-        // TODO: test a result was returned!
         this.editmemberList.push(json[0]);
         this.selectedMember = this.editMemberData();
       });
-     //
+
       console.log("Creating (POSTing)...!");
       console.log(this.selectedMember);
    },
@@ -60,15 +57,26 @@ var app = new Vue({
        position:'',
        radio_number:'',
        station_num:'',
-       phone:''
+       phone:'',
+       email:''
      }
-   }
- },
+   },
+   deleteMember(){
+     fetch('api/members/delete.php', {
+      method:'DELETE',
+      body: JSON.stringify(this.selectedMember),
+      headers: {
+        "Content-Type": "application/json; charset=utf-8"
+      }
+   });
+ }
+},
+
+
 
 created() {
     this.fetchAllMembers();
- //   this.handleNewMemberForm();
-},
+}
 })
 
 /*data  -
