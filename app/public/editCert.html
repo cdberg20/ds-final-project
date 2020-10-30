@@ -14,8 +14,9 @@
 </head>
 
 <body>
-  <!-- Nav bar -->
   <img src="img\header2.png" width="100%">
+
+  <!-- Nav bar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
 
@@ -47,65 +48,44 @@
 
       </div>
     </nav>
-    <a href="expired.html"><button type="button" name="button">View Expired</button></a>
-    <a href="memberlist.html"><button type="button" name="button">View Member List</button></a>
-
 
     <h1></h1>
 
 
-<div id="member"class="container-fluid">
-<!--
 
-
-<div id="member" class="form-group col-3">
-
- <label for="firstName">First Name</label>
-
- <input type="text" class="form-control" id="firstName" aria-describedby="First" placeholder="First Name" v-model="memberList.first_name">
-
- </div>
--->
-
-
+<div id="editCertApp">
+    <select class="form-control" v-model="selectedCertRecordID" v-on:change="selectedCertRecord=editCertList.find(m => m.cert_recordID == selectedCertRecordID)">
+          <option v-for="edit in editCertList" :value="edit.cert_recordID">{{edit.name}} for {{edit.last_name}}, {{edit.first_name}}</option>
+      </select>
     <!-- Table -->
+        <form method="post" v-if="selectedCertRecord" v-on:submit.prevent="updateCertRecord()" >
+            <h3>Edit Certification Record</h3>
+        <div class="form-group">
+          <label for="certID">Certification ID</label>
+          <input v-model="selectedCertRecord.certID" type="number" placeholder="">
+        </div><br>
+        <div class="form-group">
+          <label for="expiration">Expiration Date</label>
+                      <input v-model="selectedCertRecord.expiration" type="text">
+        </div>
 
+        <button type="submit" class="btn btn-primary">Save</button>
+<br><br><br>
+        <div>
+          <button v-on:submit="deleteCertRecord()" type="submit" class="btn btn-primary">Delete Record</button>
 
-      <table  class="sort table table-hover">
-      <thead>
-        <tr>
-          <th >MemberID</th>
-          <th >Member Frist Name</th>
-          <th >Member Last Name</th>
-          <th >Station</th>
-          <th >Contact</th>
-          <th >Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="m in memberList">
-          <td>{{ m.memberID }}</td>
-          <td>{{ m.first_name }}</td>
-          <td>{{ m.last_name }}</td>
-          <td>{{ m.station_num }}</td>
-          <td>{{ m.phone }}</td>
-          <td>{{ m.is_active }}</td>
+        </div>
 
-        </tr>
+      </form>
 
-      </tbody>
-      </table>
+  </div>
 
-</div>
-
-
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-      <script src="js/app.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="js/editCert.app.js"></script>
 
 </body>
-
 
 </html>
