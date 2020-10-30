@@ -38,3 +38,31 @@ th[role=columnheader]:not(.no-sort):hover:after {
 	visibility: visible;
 	opacity: 1;
 }
+
+.form-title {
+            background-color:lightgray;
+            padding:10px;
+            margin-left:0px;
+            margin-right:0px;
+	    margin-bottom:20px;
+
+        }
+
+h1{
+  font-family:Trebuchet MS;
+}
+
+        form{
+          margin-left:  400px;
+          margin-right: 400px;
+        }
+
+        #form2{
+          background-color: white;
+         font-weight:200;
+         font-size: 20px;
+         color: black;
+         border-style:solid;
+         padding:30px;
+
+       }
