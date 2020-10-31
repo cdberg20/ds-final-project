@@ -32,7 +32,8 @@ var app = new Vue({
        method:'POST',
        body: JSON.stringify(this.selectedMember),
        headers: {
-         "Content-Type": "application/json; charset=utf-8"
+         "Content-Type": "application/json; charset=utf-8",
+         "Accept": 'application/json; charset=utf-8'
        }
      })
       .then( response => response.json() )
@@ -70,8 +71,8 @@ var app = new Vue({
     // },
    deleteMember(){
      fetch('api/members/delete.php', {
-      method:'DELETE',
-      body: JSON.stringify(this.selectedMember),
+      method:'POST',
+      body: JSON.stringify(this.selectedMemberID),
       headers: {
         "Content-Type": "application/json; charset=utf-8"
       }
