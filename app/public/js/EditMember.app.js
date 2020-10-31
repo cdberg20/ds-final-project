@@ -4,7 +4,9 @@ var app = new Vue({
   data: {
     editmemberList: [
     ],
-    selectedMember: {},
+    selectedMember: {
+
+    },
     selectedMemberID: null
     // editMemberForm: {},
     // newCertificationForm: {},
@@ -35,34 +37,37 @@ var app = new Vue({
      })
       .then( response => response.json() )
       .then( json => {
-
+        // this.editmemberList.selectedMember=this.selectedMember;
         // TODO: test a result was returned
-        console.log(this.selectedMember);
+        // this.selectedMember = this.editMemberData();
+       json=this.editmemberList;
+        console.log(this.editmemberList);
+
       });
 
       console.log("Creating (POSTing)...!");
 
       //console.log(this.selectedMember);
    },
-   editMemberData() {
-     return {
-       memberID:'',
-       first_name:'',
-       last_name:'',
-       street:'',
-       city:'',
-       zip:'',
-       date_of_birth:'',
-       start_date:'',
-       is_active:'',
-       gender:'',
-       position:'',
-       radio_number:'',
-       station_num:'',
-       phone:'',
-       email:''
-     }
-   },
+    // editMemberData() {
+    //   return {
+    //    memberID:'',
+    //    first_name:'',
+    //    last_name:'',
+    //    street:'',
+    //    city:'',
+    //    zip:'',
+    //    date_of_birth:'',
+    //    start_date:'',
+    //    is_active:'',
+    //    gender:'',
+    //    position:'',
+    //    radio_number:'',
+    //    station_num:'',
+    //    phone:'',
+    //    email:''
+    //  }
+    // },
    deleteMember(){
      fetch('api/members/delete.php', {
       method:'DELETE',
