@@ -5,7 +5,7 @@ var app = new Vue({
   data: {
     editmemberList: [
     ],
-    selectedMember: null,
+    selectedMember: {},
     selectedMemberID: null
     // editMemberForm: {},
     // newCertificationForm: {},
@@ -26,6 +26,7 @@ var app = new Vue({
     },
 
     updateMember(){
+      console.log(this.selectedMember);
       fetch('api/members/edit.php', {
        method:'POST',
        body: JSON.stringify(this.selectedMember),
@@ -35,38 +36,39 @@ var app = new Vue({
      })
       .then( response => response.json() )
       .then( json => {
-        console.log("Returned from post:", json);
-        // TODO: test a result was returned!
-        this.editmemberList.push(json[0]);
-        this.selectedMember = this.editMemberData();
+
+        // TODO: test a result was returned
+        console.log(this.selectedMember);
       });
      //
       console.log("Creating (POSTing)...!");
-      console.log(this.selectedMember);
+
+      //console.log(this.selectedMember);
    },
 
-   editMemberData() {
-     return {
-       memberID:'',
-       first_name:'',
-       last_name:'',
-       street:'',
-       city:'',
-       zip:'',
-       date_of_birth:'',
-       start_date:'',
-       is_active:'',
-       gender:'',
-       position:'',
-       radio_number:'',
-       station_num:'',
-       phone:''
-     }
-   }
+   // editMemberData() {
+   //   return {
+   //     memberID:'',
+   //     first_name:'',
+   //     last_name:'',
+   //     street:'',
+   //     city:'',
+   //     zip:'',
+   //     date_of_birth:'',
+   //     start_date:'',
+   //     is_active:'',
+   //     gender:'',
+   //     position:'',
+   //     radio_number:'',
+   //     station_num:'',
+   //     phone:''
+   //   }
+   // }
  },
 
 created() {
     this.fetchAllMembers();
+
  //   this.handleNewMemberForm();
 },
 })
