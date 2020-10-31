@@ -17,12 +17,12 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
-  'UPDATE members SET first_name = ?, last_name = ?, street = ?, city = ?, zip = ?, date_of_birth = ?, start_date = ?, is_active = ?, gender = ?, position = ?, radio_number = ?, station_num = ?, phone = ?, email = ? WHERE memberID = ?;'
+  'UPDATE members SET first_name = ?, last_name = ?, street = ?, city = ?, zip = ?, date_of_birth = ?, start_date = ?, is_active = ?, gender = ?, position = ?, radio_number = ?, station_num = ?, phone = ?, email = ? WHERE memberID = ?'
 
 );
 
 $stmt->execute([
-  // $_POST['memberID'],
+  $_POST['memberID'],
   $_POST['first_name'],
   $_POST['last_name'],
   $_POST['street'],
@@ -39,11 +39,16 @@ $stmt->execute([
   $_POST['email']
 ]);
 
+// $members=$stmt->fetchAll();
+// $json=json_encode($members, JSON_PRETTY_PRINT);
+
 // If needed, get auto-generated PK from DB
 // $pk = $db->lastInsertId();  // https://www.php.net/manual/en/pdo.lastinsertid.php
 
 // Step 4: Output
 // Here, instead of giving output, I'm redirecting to the SELECT API,
 // just in case the data changed by entering it
+
 header('HTTP/1.1 303 See Other');
 header('Location: ../members/');
+echo $json;

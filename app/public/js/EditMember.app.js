@@ -2,8 +2,9 @@ var app = new Vue({
   el: '#editMemberApp',
 //initialize
   data: {
-    editmemberList: [],
-    selectedMember: null,
+    editmemberList: [
+    ],
+    selectedMember: {},
     selectedMemberID: null
     // editMemberForm: {},
     // newCertificationForm: {},
@@ -24,24 +25,25 @@ var app = new Vue({
     },
 
     updateMember(){
+      console.log(this.selectedMember);
       fetch('api/members/edit.php', {
        method:'POST',
        body: JSON.stringify(this.selectedMember),
        headers: {
          "Content-Type": "application/json; charset=utf-8"
        }
-      })
-      .then(response => response.json() )
-      .then(json => {
-        console.log("Returned from post:", json);
-        this.editmemberList.push(json[0]);
-        this.selectedMember = this.editMemberData();
+     })
+      .then( response => response.json() )
+      .then( json => {
+
+        // TODO: test a result was returned
+        console.log(this.selectedMember);
       });
 
       console.log("Creating (POSTing)...!");
-      console.log(this.selectedMember);
-   },
 
+      //console.log(this.selectedMember);
+   },
    editMemberData() {
      return {
        memberID:'',

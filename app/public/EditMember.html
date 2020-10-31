@@ -58,7 +58,10 @@
     <center>
         <form id="form2" method="post" v-if="selectedMember" v-on:submit.prevent="updateMember()" >
             <h3>Edit Member Record</h3>
-
+            <div>
+              <label for="first_name">Member ID</label>
+              <input v-model="selectedMember.memberID"  type="text" placeholder="First">
+            </div>
           <div>
             <label for="first_name">Member First Name</label>
             <input v-model="selectedMember.first_name" id="editMemberFirstName" type="text" placeholder="First">
@@ -127,7 +130,6 @@
             <button v-on:submit="deleteMember()" type="submit" class="btn btn-primary">Delete Record</button>
 
           </div>
-
           </form>
 
       </div>
