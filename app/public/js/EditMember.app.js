@@ -1,4 +1,3 @@
-
 var app = new Vue({
   el: '#editMemberApp',
 //initialize
@@ -40,37 +39,46 @@ var app = new Vue({
         // TODO: test a result was returned
         console.log(this.selectedMember);
       });
-     //
+
       console.log("Creating (POSTing)...!");
 
       //console.log(this.selectedMember);
    },
+   editMemberData() {
+     return {
+       memberID:'',
+       first_name:'',
+       last_name:'',
+       street:'',
+       city:'',
+       zip:'',
+       date_of_birth:'',
+       start_date:'',
+       is_active:'',
+       gender:'',
+       position:'',
+       radio_number:'',
+       station_num:'',
+       phone:'',
+       email:''
+     }
+   },
+   deleteMember(){
+     fetch('api/members/delete.php', {
+      method:'DELETE',
+      body: JSON.stringify(this.selectedMember),
+      headers: {
+        "Content-Type": "application/json; charset=utf-8"
+      }
+   });
+ }
+},
 
-   // editMemberData() {
-   //   return {
-   //     memberID:'',
-   //     first_name:'',
-   //     last_name:'',
-   //     street:'',
-   //     city:'',
-   //     zip:'',
-   //     date_of_birth:'',
-   //     start_date:'',
-   //     is_active:'',
-   //     gender:'',
-   //     position:'',
-   //     radio_number:'',
-   //     station_num:'',
-   //     phone:''
-   //   }
-   // }
- },
+
 
 created() {
     this.fetchAllMembers();
-
- //   this.handleNewMemberForm();
-},
+}
 })
 
 /*data  -
