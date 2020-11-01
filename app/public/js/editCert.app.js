@@ -42,6 +42,7 @@ var app = new Vue({
 
       console.log("Creating (POSTing)...!");
    },
+
    deleteCertRecord(){
      fetch('api/certrecords/delete.php', {
       method:'POST',
