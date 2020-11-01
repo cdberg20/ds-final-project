@@ -103,7 +103,7 @@
 <br>
 
 <div id="displayByMemberApp">
-<h4>Records by Member</h4>
+<h4>Certification Records by Member</h4>
 <select id="form3" class="form-control"  v-model="selectedMember">
       <option v-for="index in indexList" v-on:change="selectedMember=index" :value="index">{{index.memberID}} {{index.last_name}}, {{index.first_name}}</option>
   </select>
