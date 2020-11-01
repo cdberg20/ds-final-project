@@ -17,14 +17,14 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
-  'DELETE FROM members WHERE memberID=?'
-
+  'DELETE FROM members WHERE memberID=? '
 );
 
 $stmt->execute([
-  //$_POST['memberID'];
-  $_POST['memberID']
+$_POST['memberID']
 ]);
+
+
 
 // If needed, get auto-generated PK from DB
 // $pk = $db->lastInsertId();  // https://www.php.net/manual/en/pdo.lastinsertid.php
