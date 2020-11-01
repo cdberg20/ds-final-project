@@ -6,7 +6,7 @@ var app = new Vue({
       certID:'',
       agency:'',
   	  name:'',
-  	  expiration:''
+  	  expiration_time:''
     }]
   },
 
