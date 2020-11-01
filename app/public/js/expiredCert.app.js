@@ -11,6 +11,15 @@ var app = new Vue({
       last_name:'',
       name:''
     }],
+    selectedCert:{
+      cert_recordID: '',
+      memberID: '',
+      certID:'',
+  	  expiration:'',
+      first_name:'',
+      last_name:'',
+      name:''
+    }
   },
 
   methods: {
@@ -25,8 +34,7 @@ var app = new Vue({
 
       });
 
-    },
-
+    }
 
 
   },

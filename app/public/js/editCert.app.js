@@ -44,6 +44,7 @@ var app = new Vue({
        expiration:''
      }
    },
+
    deleteCertRecord(){
      fetch('api/certrecords/delete.php', {
       method:'POST',

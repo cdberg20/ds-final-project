@@ -96,6 +96,36 @@
               <td>{{ r.expiration }}</td>
             </tbody>
           </table>
+<br><br><br>
+
+<h2>View Expired by Certification</h2>
+<div>
+          <select id="form4" class="form-control"  v-model="selectedCert">
+                <option v-for="index in expiredCertRecordList" v-on:change="expiredCertRecordList=index" :value="index">{{index.certificationID}} {{index.name}}</option>
+            </select>
+
+            <table v-if="selectedCert">
+
+                    <table  class="sort table table-hover">
+                      <thead>
+                        <tr>
+                          <th>Member ID<th>
+                          <th>Member Name</th>
+                          <th>Expiration Date</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>{{ selectedCert.memberID }}</td>
+                          <td></td>
+                          <td>{{ selectedCert.last_name }}, {{ selectedCert.first_name }}</td>
+                          <td>{{ selectedCert.expiration }}</td>
+                        </tbody>
+                      </table>
+                    </div>
+
+
+
 
     </div>
     <!-- Copyright info-->
