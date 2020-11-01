@@ -3,7 +3,7 @@ var app = new Vue({
 //initialize
   data: {
     editCertList: [],
-    selectedCertRecord: null,
+    selectedCertRecord: {},
     selectedCertRecordID: null
   },
 
@@ -20,41 +20,49 @@ var app = new Vue({
     },
 
     updateCertRecord(){
+      console.log(this.selectedCertRecord);
       fetch('api/certrecords/edit.php', {
        method:'POST',
        body: JSON.stringify(this.selectedCertRecord),
        headers: {
-         "Content-Type": "application/json; charset=utf-8"
+         "Content-Type": "application/json; charset=utf-8",
+         "Accept": 'application/json; charset=utf-8'
        }
-      })
-      .then(response => response.json() )
-      .then(json => {
-        console.log("Returned from post:", json);
-        this.editCertList.push(json[0]);
-        this.selectedCertRecord = this.editMemberData();
+     })
+      .then( response => response.json() )
+      .then( json => {
+        // this.editmemberList.selectedMember=this.selectedMember;
+        // TODO: test a result was returned
+        // this.selectedMember = this.editMemberData();
+       this.editCertList=json;
+      console.log(this.editCertList);
+
+
       });
 
       console.log("Creating (POSTing)...!");
-      console.log(this.selectedCertRecord);
-   },
-
-   editMemberData() {
-     return {
-       certID:'',
-       expiration:''
-     }
    },
 
    deleteCertRecord(){
      fetch('api/certrecords/delete.php', {
       method:'POST',
-      body: JSON.stringify(this.selectedCertRecordID),
+      body: JSON.stringify(this.selectedCertRecord),
       headers: {
         "Content-Type": "application/json; charset=utf-8"
       }
-   });
+      })
+      .then( response => response.json() )
+      .then( json => {
+        // this.editmemberList.selectedMember=this.selectedMember;
+        // TODO: test a result was returned
+        // this.selectedMember = this.editMemberData();
+       this.editCertList=json;
+      console.log(this.editCertList);
+
+      });
  }
 },
+
 
 
 
