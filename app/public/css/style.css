@@ -6,6 +6,9 @@ p {
   margin: 25px;
 }
 
+table, th, td {
+  margin: 20px;
+}
 
 th[role=columnheader]:not(.no-sort) {
 	cursor: pointer;
