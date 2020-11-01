@@ -53,11 +53,11 @@
 
 <div id="displayByMemberApp">
 <h4>Records by Member</h4>
-<select id="form3" class="form-control" v-model="selectedMemberID" v-on:change="selectedMember=memberList.find(m => m.memberID == selectedMemberID)">
-      <option v-for="mem in memberList" :value="mem.memberID">{{mem.memberID}} {{mem.last_name}}, {{mem.first_name}}</option>
+<select id="form3" class="form-control"  v-model="selectedMember">
+      <option v-for="index in indexList" v-on:change="selectedMember=index" :value="index">{{index.memberID}} {{index.last_name}}, {{index.first_name}}</option>
   </select>
 
-  <table v-if="selectedMember" v-on="selectCertRecord()">
+  <table v-if="selectedMember">
 
           <table  class="sort table table-hover">
             <thead>
@@ -69,10 +69,10 @@
             </thead>
             <tbody>
               <tr>
-                <td>{{ selectedCertRecord.name }}</td>
-                <td>{{ selectedCertRecord.expiration }}</td>
+                <td>{{ selectedMember.name }}</td>
+                <td>{{ selectedMember.expiration }}</td>
                 <td>
-                  <span v-if="isExpired(selectedCertRecord.expiration)">Expired</span>
+                  <span v-if="isExpired(selectedMember.expiration)">Expired</span>
                   <span v-else>Current</span>
                 </td>
               </tbody>
@@ -88,7 +88,9 @@
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+            <script src="js/moment.js"></script>
       <script src="js/certbymember.js"></script>
+
 
 </body>
 

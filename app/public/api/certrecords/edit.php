@@ -24,6 +24,7 @@ $stmt->execute([
   $_POST['memberID'],
   $_POST['certID'],
   $_POST['expiration'],
+  $_POST['cert_recordID']
 ]);
 
 // If needed, get auto-generated PK from DB

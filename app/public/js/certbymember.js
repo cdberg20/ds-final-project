@@ -10,6 +10,8 @@ var app = new Vue({
     indexList: [{
       cert_recordID: '',
       memberID: '',
+      first_name:'',
+      last_name:'',
       certID:'',
   	  expiration:'',
       name:''
@@ -19,7 +21,7 @@ var app = new Vue({
     selectedCertRecord: [null],
     selectedCertRecordID: [null],
     selectedMemberID: null,
-    selectedMember: null
+    selectedMember: {}
   },
 
   methods: {
