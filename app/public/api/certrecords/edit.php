@@ -17,7 +17,7 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
-  'UPDATE certifications_records SET memberID = ?, certID = ?, expiration = ? WHERE cert_recordID = ?;'
+  'UPDATE certifications_records SET memberID = ?, certID = ?, expiration = ? WHERE cert_recordID = ?'
 );
 
 $stmt->execute([

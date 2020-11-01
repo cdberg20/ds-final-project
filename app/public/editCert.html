@@ -55,10 +55,11 @@
 
 <div id="editCertApp">
     <select class="form-control" v-model="selectedCertRecordID" v-on:change="selectedCertRecord=editCertList.find(m => m.cert_recordID == selectedCertRecordID)">
-          <option v-for="edit in editCertList" :value="edit.cert_recordID">{{edit.name}} for {{edit.last_name}}, {{edit.first_name}}</option>
+          <option v-for="edit in editCertList" :value="edit.cert_recordID"> {{edit.name}} for {{edit.last_name}}, {{edit.first_name}}</option>
       </select>
     <!-- Table -->
-        <form method="post" v-if="selectedCertRecord" v-on:submit.prevent="updateCertRecord()" >
+    <div v-if="selectedCertRecord">
+        <form method="post"  v-on:submit="updateCertRecord()" >
             <h3>Edit Certification Record</h3>
         <div class="form-group">
           <label for="certID">Certification ID</label>
@@ -66,17 +67,18 @@
         </div><br>
         <div class="form-group">
           <label for="expiration">Expiration Date</label>
-                      <input v-model="selectedCertRecord.expiration" type="text">
+          <input v-model="selectedCertRecord.expiration" type="text">
         </div>
 
         <button type="submit" class="btn btn-primary">Save</button>
 <br><br><br>
-        <div>
-          <button v-on:submit="deleteCertRecord()" type="submit" class="btn btn-primary">Delete Record</button>
-
-        </div>
-
       </form>
+      <form v-on:submit="deleteCertRecord()">
+      <div>
+        <button type="submit" class="btn btn-primary">Delete Record</button>
+      </div>
+    </form>
+  </div>
 
   </div>
 
