@@ -126,11 +126,13 @@
 
           <button type="submit" class="btn btn-primary">Save</button>
 
-          <div>
-            <button v-on:submit="deleteMember()" type="submit" class="btn btn-primary">Delete Record</button>
-
-          </div>
           </form>
+
+          <form v-on:submit.prevent="deleteMember()">
+            <div>
+            <button type="submit" class="btn btn-primary">Delete Record</button>
+          </div>
+        </form>
 
       </div>
     </center>

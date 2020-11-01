@@ -35,6 +35,14 @@ var app = new Vue({
      })
       .then( response => response.json() )
       .then( json => {
+<<<<<<< Updated upstream
+=======
+        // this.editmemberList.selectedMember=this.selectedMember;
+        // TODO: test a result was returned
+        // this.selectedMember = this.editMemberData();
+       this.editmemberList=json;
+      console.log(this.editmemberList);
+>>>>>>> Stashed changes
 
         // TODO: test a result was returned
         console.log(this.selectedMember);
@@ -65,12 +73,21 @@ var app = new Vue({
    },
    deleteMember(){
      fetch('api/members/delete.php', {
-      method:'DELETE',
+      method:'POST',
       body: JSON.stringify(this.selectedMember),
       headers: {
         "Content-Type": "application/json; charset=utf-8"
       }
-   });
+      })
+      .then( response => response.json() )
+      .then( json => {
+        // this.editmemberList.selectedMember=this.selectedMember;
+        // TODO: test a result was returned
+        // this.selectedMember = this.editMemberData();
+       this.editmemberList=json;
+      console.log(this.editmemberList);
+
+      });
  }
 },
 

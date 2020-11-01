@@ -22,7 +22,6 @@ $stmt = $db->prepare(
 );
 
 $stmt->execute([
-  $_POST['memberID'],
   $_POST['first_name'],
   $_POST['last_name'],
   $_POST['street'],
@@ -36,7 +35,8 @@ $stmt->execute([
   $_POST['radio_number'],
   $_POST['station_num'],
   $_POST['phone'],
-  $_POST['email']
+  $_POST['email'],
+  $_POST['memberID']
 ]);
 
 // $members=$stmt->fetchAll();
