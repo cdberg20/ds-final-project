@@ -17,7 +17,7 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
-  'DELETE FROM certifications_records WHERE cert_recordID=?'
+  'DELETE FROM certifications_records WHERE cert_recordID=?;'
 
 );
 

@@ -10,16 +10,18 @@ var app = new Vue({
     indexList: [{
       cert_recordID: '',
       memberID: '',
+      first_name:'',
+      last_name:'',
       certID:'',
   	  expiration:'',
       name:''
     }],
     currentDate:'',
     expiration_date:'',
-    selectedCertRecord: null,
-    selectedCertRecordID: null,
+    selectedCertRecord: [null],
+    selectedCertRecordID: [null],
     selectedMemberID: null,
-    selectedMember: null
+    selectedMember: {}
   },
 
   methods: {
@@ -55,11 +57,18 @@ var app = new Vue({
      .then(response => response.json() )
      .then(json => {
        console.log("Returned from post:", json);
-       this.selectedCertRecord = this.editMemberData();
+       this.selectedCertRecord.push(json[0]);
+       this.selectedCertRecordID = this.selectedData();
      });
      console.log(this.selectedCertRecord);
   },
-
+selectedData() {
+  return {
+    memberID: '',
+    certID:'',
+    expiration:'',
+  }
+},
 
   },
     created() {
