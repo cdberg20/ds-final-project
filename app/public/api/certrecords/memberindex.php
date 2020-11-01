@@ -4,7 +4,7 @@ require 'common.php';
 
 $db = DbConnection::getConnection();
 
-$sql = 'SELECT * FROM certifications_records, members, certifications Where certifications_records.certID = certifications.certID and certifications_records.memberID = members.memberID';
+$sql = 'SELECT * FROM certifications_records, members, certifications Where certifications_records.certID = certifications.certID and certifications_records.memberID = members.memberID group by members.memberID';
 $vars = [];
 
 if (isset($Get['cert_recordID'])) {

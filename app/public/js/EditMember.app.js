@@ -41,8 +41,9 @@ var app = new Vue({
         // this.editmemberList.selectedMember=this.selectedMember;
         // TODO: test a result was returned
         // this.selectedMember = this.editMemberData();
-       json=this.editmemberList;
-        console.log(this.editmemberList);
+       this.editmemberList=json;
+      console.log(this.editmemberList);
+
 
       });
 
@@ -72,12 +73,20 @@ var app = new Vue({
    deleteMember(){
      fetch('api/members/delete.php', {
       method:'POST',
-
-      body: JSON.stringify(this.selectedMemberID),
+      body: JSON.stringify(this.selectedMember),
       headers: {
         "Content-Type": "application/json; charset=utf-8"
       }
-   });
+      })
+      .then( response => response.json() )
+      .then( json => {
+        // this.editmemberList.selectedMember=this.selectedMember;
+        // TODO: test a result was returned
+        // this.selectedMember = this.editMemberData();
+       this.editmemberList=json;
+      console.log(this.editmemberList);
+
+      });
  }
 },
 
