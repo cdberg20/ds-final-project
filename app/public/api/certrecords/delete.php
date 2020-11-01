@@ -17,13 +17,13 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
-  'DELETE FROM certifications_records WHERE cert_recordID=?;'
+
+  'DELETE FROM certifications_records WHERE cert_recordID=?'
 
 );
 
 $stmt->execute([
-  //$_POST['memberID'];
-  $_POST['cert_recordID']
+$_POST['cert_recordID']
 ]);
 
 // If needed, get auto-generated PK from DB
