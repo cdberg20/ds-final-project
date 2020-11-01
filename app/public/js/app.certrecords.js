@@ -12,7 +12,9 @@ var app = new Vue({
       name:''
     }],
     currentDate:'',
-    expiration_date:''
+    expiration_date:'',
+    selectedCertRecord: null,
+    selectedCertRecordID: null
   },
 
   methods: {

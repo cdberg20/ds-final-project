@@ -72,6 +72,7 @@ var app = new Vue({
    deleteMember(){
      fetch('api/members/delete.php', {
       method:'POST',
+
       body: JSON.stringify(this.selectedMemberID),
       headers: {
         "Content-Type": "application/json; charset=utf-8"
