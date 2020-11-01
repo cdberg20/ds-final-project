@@ -46,7 +46,7 @@ var app = new Vue({
    },
    deleteCertRecord(){
      fetch('api/certrecords/delete.php', {
-      method:'DELETE',
+      method:'POST',
       body: JSON.stringify(this.selectedCertRecordID),
       headers: {
         "Content-Type": "application/json; charset=utf-8"
