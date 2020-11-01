@@ -53,11 +53,11 @@
 
 <div id="displayByMemberApp">
 <h4>Records by Member</h4>
-<select id="form2" class="form-control" v-model="selectedMemberID" v-on:change="selectedMember=memberList.find(m => m.memberID == selectedMemberID)">
+<select id="form3" class="form-control" v-model="selectedMemberID" v-on:change="selectedMember=memberList.find(m => m.memberID == selectedMemberID)">
       <option v-for="mem in memberList" :value="mem.memberID">{{mem.memberID}} {{mem.last_name}}, {{mem.first_name}}</option>
   </select>
 
-  <table v-if="selectedMember" v-on:submit.prevent="selectCertRecord()">
+  <table v-if="selectedMember" v-on="selectCertRecord()">
 
           <table  class="sort table table-hover">
             <thead>
