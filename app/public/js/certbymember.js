@@ -2,10 +2,11 @@ var app = new Vue({
   el: '#displayByMemberApp',
 //initialize
   data: {
-    memberList:[{
-      memberID: '',
-      first_name:'',
-      last_name:'',
+    certificationList: [{
+      certID:'',
+      agency:'',
+  	  name:'',
+  	  expiration_time:''
     }],
     indexList: [{
       cert_recordID: '',
