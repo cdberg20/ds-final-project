@@ -74,7 +74,7 @@
 <br>
 
 <div id="displayByCertificationApp">
-<h4>Certification Records by Member</h4>
+<h4>Certification Records by Certification</h4>
 <select id="form3" class="form-control"  v-model="selectedCertification">
       <option v-for="cert in certificationList" v-on:change="selectedCertification=cert" :value="cert">{{cert.certID}} {{cert.name}}</option>
   </select>
