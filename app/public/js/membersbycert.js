@@ -1,8 +1,8 @@
 var app = new Vue({
-  el: '#displayByMemberApp',
+  el: '#displayByCertificationApp',
 //initialize
   data: {
-    memberList:[{
+    certificationList:[{
       memberID: '',
       first_name:'',
       last_name:'',
@@ -21,20 +21,20 @@ var app = new Vue({
     selectedCertRecord: [null],
     selectedCertRecordID: [null],
     selectedMemberID: null,
-    selectedMember: {}
+    selectedCertification: {}
   },
 
   methods: {
     isExpired(dt) {
        return dt < moment().format('YYYY-MM-DD');
     },
-    fetchMember(){
-      fetch('api/members/index.php')
+    fetchCertification(){
+      fetch('api/certifications/index.php')
       .then(response => response.json())
       .then(json => {
-        this.memberList=json;
+        this.certificationList=json;
 
-        console.log(this.memberList);
+        console.log(this.certificationList);
       });
     },
     fetchCertRecords(){
@@ -52,16 +52,16 @@ var app = new Vue({
       // console.log(expiration_date);
     },
 
-    selectCertRecord(){
-      fetch('api/certrecords/memberindex.php')
-     .then(response => response.json() )
-     .then(json => {
-       console.log("Returned from post:", json);
-       //this.selectedCertRecord.push(json[0]);
-       this.selectedCertRecordID = this.selectedData();
-     });
-     console.log(this.selectedCertRecord);
-  },
+  //   selectCertRecord(){
+  //     fetch('api/certrecords/memberindex.php')
+  //    .then(response => response.json() )
+  //    .then(json => {
+  //      console.log("Returned from post:", json);
+  //      //this.selectedCertRecord.push(json[0]);
+  //      this.selectedCertRecordID = this.selectedData();
+  //    });
+  //    console.log(this.selectedCertRecord);
+  // },
 selectedData() {
   return {
     memberID: '',
@@ -73,7 +73,7 @@ selectedData() {
   },
     created() {
       this.fetchCertRecords();
-      this.fetchMember();
+      this.fetchCertification();
 
     },
 })
